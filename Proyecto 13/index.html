@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Aniversario</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+        
+        <!-- VISTA: Menú Principal -->
+        <section id="vista-menu" class="vista activa">
+            <h1>Especial Segundo Aniversario</h1>
+            <p class="instrucciones">Elige un juego para comenzar a acumular Cocovirtuales.</p>
+
+            <div class="tarjeta-menu">
+                <div class="contador-global">
+                    <span>Cocovirtuales Acumulados:</span>
+                    <strong id="totalCocovirtuales">0</strong> / 24
+                </div>
+
+                <div class="botones-verticales">
+                    <button class="btn-juego" id="btnIrDino">Juego del Dinosaurio</button>
+                    <button class="btn-juego" id="btnIrAhorcado">Juego del Ahorcado</button>
+                    <button class="btn-especial oculto" id="btnVerCarta">Sorpresa</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISTA: Juego Dinosaurio -->
+        <section id="vista-dino" class="vista">
+            <h1>Llega hasta 104 puntos</h1>
+            <p class="instrucciones">Presiona la barra espaciadora o haz clic para saltar.</p>
+
+            <div class="pantalla-juego">
+                <canvas id="juegoCanvas" width="900" height="260"></canvas>
+            </div>
+
+            <div class="panel-puntaje">
+                <div>Objetivo: <strong>104 pts</strong></div>
+                <div>Puntaje: <span id="puntaje">0</span></div>
+                <div>Mejor puntaje: <span id="puntajeMaximo">0</span></div>
+            </div>
+
+            <div class="botones">
+                <button id="reiniciarBtn">Reiniciar Juego</button>
+                <button id="botonAyuda">Ver Controles</button>
+                <button class="btn-volver" data-volver>Volver al Menú</button>
+            </div>
+        </section>
+
+        <!-- VISTA: Juego Ahorcado -->
+        <section id="vista-ahorcado" class="vista">
+            <h1>El Ahorcado</h1>
+            <p class="instrucciones">Adivina las 4 palabras secretas. ¡Ganas 4 Cocovirtuales por cada una!</p>
+
+            <div class="tarjeta-juego">
+                <div class="ahorcado-estatus">
+                    <div>Palabra: <span id="palabraNumero">1</span> de 4</div>
+                    <div>Intentos restantes: <span id="intentosRestantes">6</span></div>
+                </div>
+
+                <div id="palabraContenedor" class="palabra-contenedor"></div>
+                <div id="tecladoContenedor" class="teclado-contenedor"></div>
+                
+                <p id="mensajeAhorcado" class="mensaje-juego"></p>
+
+                <div class="botones">
+                    <button id="reiniciarAhorcadoBtn">Reiniciar Ahorcado</button>
+                    <button class="btn-volver" data-volver>Volver al Menú</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
